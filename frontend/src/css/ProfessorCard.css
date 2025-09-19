@@ -1,0 +1,172 @@
+.prof-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px 16px;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    0 1px 4px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 300px; /* smaller width */
+  margin: 12px; /* margin for spacing between cards */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.prof-card:hover,
+.prof-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.15),
+    0 4px 12px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+/* Container for cards to use flex or grid with gap */
+.professors-grid {
+  display: flex;
+  flex-wrap: wrap;
+justify-content: flex-start;
+  gap: 24px; /* space between cards */
+  padding: 0 12px;
+}
+
+.prof-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.prof-img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #e2e8f0; /* softer grey */
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.prof-img:hover,
+.prof-img:focus {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  outline: none;
+}
+
+.prof-info h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b; /* dark slate */
+  user-select: text;
+}
+
+.badge {
+  display: inline-block;
+  background: #e0e7ff; /* light indigo */
+  color: #3730a3; /* indigo-800 */
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-top: 6px;
+  font-weight: 600;
+  user-select: none;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.star {
+  color: #cbd5e1; /* cool gray */
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.star.filled {
+  color: #fbbf24; /* gold */
+}
+
+.rating-text {
+  font-size: 14px;
+  color: #475569; /* slate-600 */
+  font-weight: 600;
+  user-select: none;
+}
+
+.prof-bio {
+  font-size: 15px;
+  color: #64748b; /* slate-500 */
+  margin: 20px 0 24px;
+  min-height: 60px; /* balanced height */
+  line-height: 1.5;
+  user-select: text;
+}
+
+.prof-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.prof-stats {
+  font-size: 13px;
+  color: #64748b; /* slate-500 */
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  user-select: none;
+}
+
+.btn {
+  background: #2563eb;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.btn:hover,
+.btn:focus {
+  background: #1d4ed8;
+  box-shadow: 0 6px 20px rgba(29, 78, 216, 0.6);
+  outline: none;
+}
+
+/* Responsive tweak: center cards on small screens */
+@media (max-width: 480px) {
+  .prof-card {
+    max-width: 100%;
+    padding: 20px 16px;
+  }
+  .prof-info h3 {
+    font-size: 18px;
+  }
+  .prof-bio {
+    font-size: 14px;
+    min-height: 50px;
+  }
+  .btn {
+    width: 100%;
+    padding: 12px 0;
+  }
+}

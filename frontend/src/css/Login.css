@@ -1,0 +1,97 @@
+/* Fullscreen centering */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* vertical center */
+  align-items: center;       /* horizontal center */
+  min-height: 100vh;  
+  width: 100vw;       /* full screen height */
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding: 0;
+  box-sizing: border-box;
+    margin: 0;
+}
+
+.college-logo {
+  width: 140px;      /* increase from 100px → bigger logo */
+  height: auto;      /* keep aspect ratio */
+  margin: 0 auto 20px;
+  display: block;
+}
+
+/* Card-like form */
+.login-form {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 360px;
+}
+
+/* Input fields */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.form-group input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #030303;
+}
+
+/* Buttons */
+.btn-login {
+  width: 100%;
+  padding: 12px;
+  background: #3a3b3b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-login:hover {
+  background: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-form {
+    padding: 20px 15px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  .form-group input {
+    font-size: 14px;
+  }
+
+  .btn-login {
+    font-size: 15px;
+    padding: 10px;
+  }
+}

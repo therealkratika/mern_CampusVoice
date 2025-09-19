@@ -1,0 +1,227 @@
+
+.professor-management {
+  margin-top: 32px;
+  width:100%;
+   min-height: 100vh;
+   flex-direction: column;
+}
+
+.professor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.professor-header h2 {
+  margin: 0 0 4px 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.professor-header p {
+  margin: 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.btn-add-professor {
+  background-color: #090b1f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-add-professor:hover {
+  background-color: #1c1f44;
+}
+
+.professor-table-wrapper {
+  overflow-x: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.05);
+}
+
+.professor-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  color: #374151;
+}
+
+.professor-table caption {
+  text-align: left;
+  padding-bottom: 12px;
+  font-weight: 600;
+  color: #4b5563;
+  font-size: 13px;
+}
+
+.professor-table th, .professor-table td {
+  text-align: left;
+  padding: 12px 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.professor-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.prof-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #f3f4f6;
+}
+
+.prof-name {
+  font-weight: 600;
+  margin: 0;
+  color: #111827;
+}
+
+.prof-experience {
+  margin: 2px 0 0 0;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.subject-badge {
+  background-color: #dbeafe;
+  color: #2563eb;
+  border-radius: 12px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.branch-badge {
+  background-color: #f3f4f6;
+  color: #6b7280;
+  border-radius: 12px;
+  padding: 2px 10px;
+  font-size: 12px;
+  margin-right: 6px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.rating {
+  font-weight: 600;
+  color: #fbbf24;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.star {
+  font-size: 16px;
+}
+
+.rating small {
+  color: #374151;
+  font-weight: 400;
+  margin-left: 2px;
+}
+
+.videos-icon {
+  color: #9ca3af;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-edit, .btn-delete {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 6px 8px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s ease;
+}
+
+.btn-edit {
+  color: #374151;
+  border-color: #d1d5db;
+}
+
+.btn-edit:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.btn-delete {
+  color: #dc2626;
+  border-color: #fca5a5;
+}
+
+.btn-delete:hover {
+  border-color: #b91c1c;
+  background-color: #fca5a5;
+  color: #b91c1c;
+}
+.confirm-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.confirm-box {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+}
+
+.confirm-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-cancel {
+  background: #ccc;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-confirm {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
