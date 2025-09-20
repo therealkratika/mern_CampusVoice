@@ -28,7 +28,7 @@ export default function Dashboard({
   useEffect(() => {
     const fetchProfessors = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/professors");
+        const res = await axios.get("https://campusvoice-backend.onrender.com/api/professors");
         const raw = res.data || [];
 
         const normalized = raw.map((p) => {
