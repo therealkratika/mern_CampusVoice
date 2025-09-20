@@ -18,7 +18,7 @@ export default function AddVideoForm({ isOpen, onClose, initialData, onUpdate })
 
     const fetchProfessors = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/professors");
+        const res = await fetch("https://campusvoice-backend.onrender.com/api/professors");
         const data = await res.json();
         setProfessors(data);
       } catch (err) {
@@ -44,8 +44,8 @@ export default function AddVideoForm({ isOpen, onClose, initialData, onUpdate })
 
     try {
       const url = initialData._id
-        ? `http://localhost:5000/api/videos/${initialData._id}`
-        : "http://localhost:5000/api/videos";
+        ? `https://campusvoice-backend.onrender.com/api/videos/${initialData._id}`
+        : "https://campusvoice-backend.onrender.com/api/videos";
       const method = initialData._id ? "PUT" : "POST";
 
       const res = await fetch(url, { method, body: formData });
@@ -110,7 +110,7 @@ export default function AddVideoForm({ isOpen, onClose, initialData, onUpdate })
                 src={
                   thumbnailFile
                     ? URL.createObjectURL(thumbnailFile)
-                    : `http://localhost:5000/uploads/${initialData.thumbnail}`
+                    : `https://campusvoice-backend.onrender.com/uploads/${initialData.thumbnail}`
                 }
                 alt="Thumbnail Preview"
                 width="120"
