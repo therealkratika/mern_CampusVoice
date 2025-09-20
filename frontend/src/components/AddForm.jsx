@@ -68,13 +68,13 @@ export default function AddForm({ isOpen, onClose, initialData = {}, onUpdate })
 
       if (initialData?._id) {
         // Edit professor
-        await axios.put(`http://localhost:5000/api/professors/${initialData._id}`, data, {
+        await axios.put(`https://campusvoice-backend.onrender.com/api/professors/${initialData._id}`, data, {
           headers: { "Content-Type": "multipart/form-data" },
         });
         alert("✅ Professor updated successfully!");
       } else {
         // Add new professor
-        await axios.post("http://localhost:5000/api/professors", data, {
+        await axios.post("https://campusvoice-backend.onrender.com/api/professors", data, {
           headers: { "Content-Type": "multipart/form-data" },
         });
         alert("✅ Professor added successfully!");
