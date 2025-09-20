@@ -26,12 +26,8 @@ export default function AIChat() {
 
     if (lower.includes("whats new") || lower.includes("what's new")) {
       // randomly decide between video update or top professor
-      if (Math.random() > 0.5) {
         return "A professor just added a new video 🎥. Go check it out!";
-      } else {
-        const randomProf = professors[Math.floor(Math.random() * professors.length)];
-        return `The top professor right now is ${randomProf} 🌟.`;
-      }
+      
     }
 
     if (lower.includes("bye")) {
