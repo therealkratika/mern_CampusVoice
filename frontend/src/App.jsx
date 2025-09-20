@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard"; // optional, for after login
+import Dashboard from "./pages/Dashboard"; 
 import AdminDashboard from "./pages/AdminDashboard";
 import AIChat from "./components/AIChat";
 import ProfessorProfile from "./pages/ProfessorProfile";
