@@ -37,7 +37,7 @@ const [playingVideoId, setPlayingVideoId] = useState(null);
   const handleSubmit = async () => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/professors/${id}/reviews`,
+        `https://campusvoice-backend.onrender.com/api/professors/${id}/reviews`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -187,7 +187,7 @@ const [playingVideoId, setPlayingVideoId] = useState(null);
                 onEnded={() => setPlayingVideoId(null)}
               >
                 <source
-                  src={`http://localhost:5000/api/videos/stream/${video.filename}`}
+                  src={`https://campusvoice-backend.onrender.com/api/videos/stream/${video.filename}`}
                   type="video/mp4"
                 />
                 Your browser does not support the video tag.
