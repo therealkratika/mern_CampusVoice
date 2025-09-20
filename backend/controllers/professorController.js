@@ -49,7 +49,7 @@ export const addProfessor = async (req, res) => {
       biography: req.body.biography,
       branches: JSON.parse(req.body.branches || "[]"),
       semestersTaught: JSON.parse(req.body.semestersTaught || "[]"),
-      profileImage: req.file ? req.file.filename : "", // save filename
+      profileImage: req.file ? req.file.filename : "", 
     });
 
     await prof.save();

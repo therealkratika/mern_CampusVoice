@@ -386,7 +386,6 @@ export default function Dashboard({
               if (!subjectProfessors || subjectProfessors.length === 0) return null;
 
               const isExpanded = expandedSubjects[subject.id];
-
               return (
                 <div key={subject.id} className="subject-block">
                   <h3>
