@@ -72,7 +72,7 @@ const [playingVideoId, setPlayingVideoId] = useState(null);
   return (
     <div className="container">
       <Link to="/dashboard" className="back-link">
-        ← Back to Dashboard
+         Back to Dashboard
       </Link>
 
       <div className="profile-card">

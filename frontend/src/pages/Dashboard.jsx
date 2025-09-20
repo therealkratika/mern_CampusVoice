@@ -2,7 +2,6 @@ import React, { useState, useMemo, useEffect } from "react";
 import axios from "axios";
 import "../css/Dashboard.css";
 import { ProfessorCard } from "../components/ProfessorCard";
-import { ComparisonModal } from "../components/ComparisonModal";
 import logo from "../assets/CampusVoice.png";
 
 export default function Dashboard({
@@ -21,9 +20,7 @@ export default function Dashboard({
   const [selectedSemester, setSelectedSemester] = useState("all");
   const [activeTab, setActiveTab] = useState("top-rated");
   const [compareList, setCompareList] = useState([]);
-  const [isCompareModalOpen, setIsCompareModalOpen] = useState(false);
   const [expandedSubjects, setExpandedSubjects] = useState({});
-
   const [localSubjects, setLocalSubjects] = useState(subjects || []);
   const [localBranches, setLocalBranches] = useState(branches || []);
   const [localSemesters, setLocalSemesters] = useState(semesters || []);
@@ -200,14 +197,6 @@ export default function Dashboard({
       totalProfs > 0 ? profsInCollege.reduce((s, p) => s + (p.averageRating || 0), 0) / totalProfs : 0;
     return { totalProfessors: totalProfs, totalVideos, averageRating };
   }, [professors, college]);
-
-  // Compare handlers
-  const handleAddToCompare = (professor) => {
-    if (compareList.length >= 3) return;
-    if (!compareList.some((p) => p.id === professor.id)) setCompareList((prev) => [...prev, professor]);
-  };
-  const handleRemoveFromCompare = (professorId) =>
-    setCompareList((prev) => prev.filter((p) => p.id !== professorId));
 
   const toggleExpand = (subjectId) =>
     setExpandedSubjects((prev) => ({ ...prev, [subjectId]: !prev[subjectId] }));
@@ -457,19 +446,10 @@ export default function Dashboard({
               onClick={() => setIsCompareModalOpen(true)}
               aria-disabled={compareList.length < 2}
             >
-              Compare Now
             </button>
           </div>
         )}
       </main>
-
-      <ComparisonModal
-        professors={compareList}
-        branches={localBranches}
-        isOpen={isCompareModalOpen}
-        onClose={() => setIsCompareModalOpen(false)}
-        onViewProfile={(prof) => onViewProfessor(prof)}
-      />
     </div>
   );
 }

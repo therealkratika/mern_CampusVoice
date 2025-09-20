@@ -13,6 +13,42 @@ export default function AIChat() {
   const [dragging, setDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
+  // professors for fake demo
+  const professors = ["Dr. Smith", "Prof. Gupta", "Dr. Lee", "Prof. Johnson"];
+
+  // simple fake AI dataset
+  const fakeReplies = (userInput) => {
+    const lower = userInput.toLowerCase();
+
+    if (lower.includes("hi") || lower.includes("hii") || lower.includes("hello")) {
+      return "Hii 👋, how are you? How can I help you today?";
+    }
+
+    if (lower.includes("whats new") || lower.includes("what's new")) {
+      // randomly decide between video update or top professor
+      if (Math.random() > 0.5) {
+        return "A professor just added a new video 🎥. Go check it out!";
+      } else {
+        const randomProf = professors[Math.floor(Math.random() * professors.length)];
+        return `The top professor right now is ${randomProf} 🌟.`;
+      }
+    }
+
+    if (lower.includes("bye")) {
+      return "Goodbye! 👋 Have a great day!";
+    }
+
+    if (lower.includes("react")) {
+      return "React is a JavaScript library for building user interfaces ⚛️.";
+    }
+
+    if (lower.includes("css")) {
+      return "CSS is used to style and design web pages 🎨.";
+    }
+
+    return "Hmm 🤔 I’m not sure, but I can still chat with you!";
+  };
+
   const handleSend = async () => {
     if (!input.trim()) return;
 
@@ -21,22 +57,12 @@ export default function AIChat() {
     setInput("");
     setLoading(true);
 
-    try {
-      const res = await fetch("http://localhost:5000/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: input }),
-      });
-
-      const data = await res.json();
-      const botMessage = { sender: "bot", text: data.reply };
+    setTimeout(() => {
+      const reply = fakeReplies(userMessage.text);
+      const botMessage = { sender: "bot", text: reply };
       setMessages((prev) => [...prev, botMessage]);
-    } catch (err) {
-      const errorMessage = { sender: "bot", text: "Oops! Something went wrong." };
-      setMessages((prev) => [...prev, errorMessage]);
-    } finally {
       setLoading(false);
-    }
+    }, 1000); // fake typing delay
   };
 
   const handleKeyPress = (e) => {
@@ -77,7 +103,9 @@ export default function AIChat() {
       {isOpen && (
         <div className="ai-chat-window">
           <div className="chat-header" onMouseDown={handleMouseDown}>
-            AI Chat bot
+            <span className="chat-header-title">
+              <span className="chat-header-status"></span> AI Chat Bot
+            </span>
             <button className="close-btn" onClick={() => setIsOpen(false)}>
               ✖
             </button>
@@ -88,7 +116,13 @@ export default function AIChat() {
                 {msg.text}
               </div>
             ))}
-            {loading && <div className="chat-message bot">Typing...</div>}
+            {loading && (
+              <div className="typing-indicator">
+                <span className="typing-dot"></span>
+                <span className="typing-dot"></span>
+                <span className="typing-dot"></span>
+              </div>
+            )}
           </div>
           <div className="ai-chat-input">
             <input
@@ -98,7 +132,9 @@ export default function AIChat() {
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={handleKeyPress}
             />
-            <button onClick={handleSend}>Send</button>
+            <button onClick={handleSend} className={loading ? "loading" : ""}>
+              {loading ? "" : "➤"}
+            </button>
           </div>
         </div>
       )}
