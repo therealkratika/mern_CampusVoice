@@ -12,7 +12,7 @@ export default function AddVideo() {
   // Fetch videos
   const fetchVideos = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/videos");
+      const response = await fetch("https://campusvoice-backend.onrender.com/api/videos");
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       const data = await response.json();
       setVideos(Array.isArray(data) ? data : []);
@@ -37,7 +37,7 @@ export default function AddVideo() {
 
   const confirmDeleteVideo = async (videoId) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/videos/${videoId}`, {
+      const res = await fetch(`https://campusvoice-backend.onrender.com/api/videos/${videoId}`, {
         method: "DELETE",
       });
       const data = await res.json();
@@ -155,7 +155,7 @@ export default function AddVideo() {
                   <td className="video-cell">
                     {video.thumbnail ? (
                       <img
-                        src={`http://localhost:5000/uploads/${video.thumbnail}`}
+                        src={`https://campusvoice-backend.onrender.com/uploads/${video.thumbnail}`}
                         alt="thumbnail"
                         width="120"
                       />
@@ -165,7 +165,7 @@ export default function AddVideo() {
                     <div>
                       <p className="video-title">{video.title}</p>
                       <a
-                        href={`http://localhost:5000/uploads/${video.filename}`}
+                        href={`https://campusvoice-backend.onrender.com/uploads/${video.filename}`}
                         target="_blank"
                         rel="noreferrer"
                       >
