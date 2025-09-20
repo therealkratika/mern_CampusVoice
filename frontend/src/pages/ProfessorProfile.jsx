@@ -16,7 +16,7 @@ const [playingVideoId, setPlayingVideoId] = useState(null);
   useEffect(() => {
     const fetchProfessor = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/professors/${id}`);
+        const res = await fetch(`https://campusvoice-backend.onrender.com/api/professors/${id}`);
         if (!res.ok) throw new Error("Failed to fetch professor");
         const data = await res.json();
         setProfessor(data);
