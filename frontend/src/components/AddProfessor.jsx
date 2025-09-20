@@ -20,7 +20,7 @@ const handleDeleteClick = (id) => {
 
 const confirmDeleteProfessor = async () => {
   try {
-    await axios.delete(`http://localhost:5000/api/professors/${confirmDelete.id}`);
+    await axios.delete(`https://campusvoice-backend.onrender.com/api/professors/${confirmDelete.id}`);
     fetchProfessors();
   } catch (error) {
     console.error("Error deleting professor:", error);
@@ -40,7 +40,7 @@ const cancelDelete = () => {
 
   const fetchProfessors = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/professors");
+      const res = await axios.get("https://campusvoice-backend.onrender.com/api/professors");
       setProfessors(res.data);
     } catch (error) {
       console.error("Error fetching professors:", error);
