@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "../css/AddForm.css";
+import "./css/AddForm.css";
 
 const branches = [
   { code: "CSE", label: "CSE", icon: "💻" },

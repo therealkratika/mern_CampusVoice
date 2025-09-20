@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaTrash, FaEdit, FaEye, FaClock } from "react-icons/fa";
 import AddVideoForm from "./AddVideoForm";
-import "../css/AddVideo.css";
+import "./css/AddVideo.css";
 
 export default function AddVideo() {
   const [showForm, setShowForm] = useState(false);

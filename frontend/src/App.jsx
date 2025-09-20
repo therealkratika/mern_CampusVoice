@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard"; 
-import AdminDashboard from "./pages/AdminDashboard";
 import AIChat from "./components/AIChat";
 import ProfessorProfile from "./pages/ProfessorProfile";
 function App() {
@@ -13,7 +12,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login/:collegeId" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
-         <Route path="/admindashboard" element={<AdminDashboard />} />
+
           <Route path="/dashboard/professors/:id" element={<ProfessorProfile />} />
 
       </Routes>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import AddForm from "./AddForm.jsx"; 
-import "../css/AddProfessor.css";
+import "./css/AddProfessor.css";
 
 export default function AddProfessor() {
   const [showForm, setShowForm] = useState(false);

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../css/AddVideoForm.css";
+import "./css/AddVideoForm.css";
 
 export default function AddVideoForm({ isOpen, onClose, initialData, onUpdate }) {
   const [videoFile, setVideoFile] = useState(null);

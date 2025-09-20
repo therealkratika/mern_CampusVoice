@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "../css/AdminDashboard.css";
-import Navbar from "../components/Navbar";
-import AddProfessor from "../components/AddProfessor.jsx";
-import AddVideo from "../components/AddVideos.jsx";
+import "./AdminDashboard.css";
+import Navbar from "../component/Navbar.jsx";
+import AddProfessor from "../component/AddProfessor.jsx";
+import AddVideo from "../component/AddVideo.jsx";
 const tabs = [
   { id: "overview", label: "Overview", icon: "👤" },
   { id: "professors", label: "Professors", icon: "👥" },
